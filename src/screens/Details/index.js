@@ -2,8 +2,9 @@ import React, {Component} from 'react';
 import {
     View,
     Text,
-    StyleSheet,
 } from 'react-native';
+
+import {styles} from './styles'
 
 export default class Details extends Component{
     constructor(props) {
@@ -15,12 +16,18 @@ export default class Details extends Component{
             <View style={styles.contact}>
                 <View style={{flex:3}}>
                     <Text style={styles.fields}>
-                        Name:{this.props.detail.name}
+                        {this.props.detail.name}
+                    </Text>
+                    <Text style={styles.fields}>
+                        {this.props.detail.mobile}
+                    </Text>
+                    <Text style={styles.fields}>
+                        {this.props.detail.city}
                     </Text>
                 </View>
-                <View style={{flex:1}}>
-                    <Text style={styles.fields}>
-                        Role:{this.props.detail.role}
+                <View style={{flex:1,justifyContent:'center'}}>
+                    <Text style={styles.rightField}>
+                        {this.props.detail.role}
                     </Text>
                 </View>
             </View>
@@ -28,17 +35,3 @@ export default class Details extends Component{
     }
 };
 
-const styles = StyleSheet.create({
-    contact: {
-        flexDirection:'row',
-        backgroundColor: 'skyblue',
-        borderRadius: 10,
-        borderColor: '#000000',
-        borderWidth: 1,
-        padding: 10,
-        margin: 5
-    },
-    fields: {
-        flex: 1,
-    }
-});

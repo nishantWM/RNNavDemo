@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {HomeScreenStack} from './HomeScreen';
+import {Router} from "./src/router";
 
 export default class App extends Component{
   render(){
-      return <HomeScreenStack/>;
+      return <Router/>;
   };
 };
